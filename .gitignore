@@ -1,0 +1,18 @@
+# colcon
+build/
+install/
+log/
+
+# ROS 2 launch files with temporary cache
+.launch/
+
+# VS Code and CLion
+.vscode/
+.idea/
+
+# Python bytecode
+**/__pycache__/
+
+# macOS and Linux miscellany
+.DS_Store
+*.swp
