@@ -1,13 +1,20 @@
 name: build
 on: [push, pull_request]
+
 jobs:
   humble:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # Humble targets 22.04
+
     steps:
       - uses: actions/checkout@v4
+
+      # Install ROS 2 Humble and ROS tooling
       - uses: ros-tooling/setup-ros@v0.7
         with:
           required-ros-distributions: humble
+
+      # Build and test this workspace
       - uses: ros-tooling/action-ros-ci@v0.3
         with:
           package-name: my_simple_arm
+          target-ros2-distro: humble
